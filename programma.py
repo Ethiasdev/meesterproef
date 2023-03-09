@@ -6,6 +6,7 @@ from lingowords import *
 
 
 te_raden_woord = selecteer_woord(woordenlijst)
+print(te_raden_woord)
 
 
 beginletter = te_raden_woord[0]
