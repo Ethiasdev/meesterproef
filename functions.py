@@ -59,7 +59,7 @@ def print_win_af():
 def print_beginletter(beginletter):
     return f"Het te raden woord begint met een '{beginletter}'."
 
-def poging_checker(feedback, poging):
+def poging_checker(feedback):
     if feedback == "Het geraden woord moet uit precies 5 letters bestaan. Probeer opnieuw.":
         return 0
     else:

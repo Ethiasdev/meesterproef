@@ -20,7 +20,7 @@ while poging != 6:
     feedback = geef_feedback(geraden_woord, te_raden_woord)
     print(feedback)
 
-    poging += poging_checker(feedback, poging)
+    poging += poging_checker(feedback)
 
     if check_verloren(poging):
         print(print_einde_af(te_raden_woord))
