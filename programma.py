@@ -1,28 +1,26 @@
 from functions import *
 from lingowords import *
-
-
-
-
+poging = 1
 
 te_raden_woord = selecteer_woord(woordenlijst)
 print(te_raden_woord)
 
 
-beginletter = te_raden_woord[0]
-print(f"Het te raden woord begint met een '{beginletter}'.")
+beginletter = pak_beginletter(te_raden_woord)
+print(print_beginletter(beginletter))
 
 
-for poging in range(1, 6):
-    print(f"\nPoging {poging}:")
-    geraden_woord = input("Raad het woord: ").lower()
+while poging != 6:
+    geraden_woord = vraag_om_gok(poging)
     
-    if geraden_woord == te_raden_woord:
-        print("Gefeliciteerd, je hebt het woord geraden!")
+    if check_goed(geraden_woord, te_raden_woord):
+        print(print_win_af())
         break
     
     feedback = geef_feedback(geraden_woord, te_raden_woord)
     print(feedback)
-    
-    if poging == 5:
-        print(f"\nHelaas, het woord was '{te_raden_woord}'. Volgende keer beter!")
+
+    poging += poging_checker(feedback, poging)
+
+    if check_verloren(poging):
+        print(print_einde_af(te_raden_woord))
